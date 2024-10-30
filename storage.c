@@ -15,7 +15,8 @@ struct Storage{
     Date create;
     Recove* recove;
     unsigned char* content;
-    char priv;
+    unsigned char priv;
+    unsigned short int id;
 };
 typedef struct Storage Storage;
 
@@ -38,6 +39,7 @@ int main(void){
     fclose(f);
     printf("%02x \t %x \t %x \t %x \t %02x\n", bytes[0], bytes[1], bytes[2], bytes[3], bytes[4]);
     printf("File size -> %li\n",status.st_size);
+    printf("\n\nshort int -> %li short -> %li int -> %li\n", sizeof(unsigned short int), sizeof(short), sizeof(int));
     /*
     Recove* r = create_Recove();
     for (int i = 0; i < 3; i++){
